@@ -27,10 +27,10 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
 
-      - name: Recreate Android Project Files Safely
+      - name: Fresh Android Rebuild
         run: |
           rm -rf android
-          flutter create . --platforms=android
+          flutter create . --platforms=android --org com.example
 
       - name: Build APK
         run: flutter build apk --release
